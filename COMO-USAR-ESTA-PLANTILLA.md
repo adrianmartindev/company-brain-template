@@ -6,7 +6,7 @@ Esta carpeta es la estructura de un company brain: la base de conocimiento de un
 
 | Pieza | Para qué sirve |
 |---|---|
-| `CLAUDE.md` | Reglas que Claude cumple siempre en esta carpeta: qué es la empresa, el mapa del brain, cómo se reparte el trabajo entre agentes y cómo se escribe cada documento |
+| `CLAUDE.md.ejemplo` | Plantilla del `CLAUDE.md` del brain (se copia como `CLAUDE.md` al montarlo). Reglas que Claude cumplirá siempre: qué es la empresa, el mapa del brain, cómo se reparte el trabajo entre agentes y cómo se escribe cada documento |
 | `README.md` | Índice general por departamento (se regenera solo) |
 | `NN-Departamento/README.md` | Qué va en cada departamento, qué no y de dónde sale |
 | `NN-Departamento/_plantillas/` | Cómo se guarda cada tipo de documento de ese departamento |
@@ -26,10 +26,10 @@ Esta carpeta es la estructura de un company brain: la base de conocimiento de un
 
 ```
 Esta carpeta es una plantilla de company brain. Úsala como referencia para montar el de mi empresa, sin cambiar su estructura.
-1. Lee primero COMO-USAR-ESTA-PLANTILLA.md, CLAUDE.md, el README.md de cada departamento y sus _plantillas/.
+1. Lee primero COMO-USAR-ESTA-PLANTILLA.md, CLAUDE.md.ejemplo, el README.md de cada departamento y sus _plantillas/.
 2. Entrevístame haciéndome UNA pregunta cada vez y espera mi respuesta antes de seguir. Cubre lo que piden las plantillas de 01-Direccion, 06-Ventas y 07-Marca-y-Diseno, y lo básico de 08-Operaciones-y-Equipo. Si respondo "no lo sé", apúntalo como [PENDIENTE] y sigue.
 3. Con mis respuestas, crea los documentos en su departamento siguiendo la plantilla que les corresponde: mismo nombre de archivo (NN-tema.md), misma cabecera y mismas secciones. No inventes nada para rellenar un hueco.
-4. Rellena el CLAUDE.md y los README.md de departamento con los datos de mi empresa y borra los comentarios de plantilla. No toques las carpetas _plantillas.
+4. Copia CLAUDE.md.ejemplo como CLAUDE.md, rellénalo y borra CLAUDE.md.ejemplo. Rellena también los README.md de departamento con los datos de mi empresa y borra los comentarios de plantilla. No toques las carpetas _plantillas.
 5. Regenera los índices con el script de la skill de ingesta.
 6. Termina con una tabla: documento creado, departamento y huecos [PENDIENTE] que han quedado.
 Antes de crear nada, dime tu plan.
@@ -40,9 +40,9 @@ Antes de crear nada, dime tu plan.
 - **No cambies la estructura de carpetas ni la numeración.** Así todos los brains se parecen y los agentes y skills funcionan igual en todos.
 - **Un dato, un archivo.** Si algo ya está escrito, se enlaza; no se copia.
 - **Lo que no se sabe se marca como `[PENDIENTE]`.** Un brain con huecos marcados es mejor que uno con datos inventados.
-- **Nada de datos de contacto de clientes, contraseñas ni credenciales.** Ver "Qué NO entra en el brain" en `CLAUDE.md`.
+- **Nada de datos de contacto de clientes, contraseñas ni credenciales.** Ver "Qué NO entra en el brain" en `CLAUDE.md.ejemplo`.
 
 ## Notas técnicas
 
 - El script de conversión de PDF y el de índices necesitan Python y [`uv`](https://docs.astral.sh/uv/). Si no los tienes, Claude puede convertir los documentos sin scripts y actualizar los índices a mano; díselo.
-- Las plantillas de agente y de skill acaban en `.ejemplo` a propósito: con extensión `.md` Claude Code las cargaría como si fueran un agente o una skill de verdad. Para crear uno, cópialas con el nombre definitivo (`.claude/agents/[nombre].md` o `.claude/skills/[nombre]/SKILL.md`).
+- Las plantillas de `CLAUDE.md`, agente y skill acaban en `.ejemplo` a propósito: con su nombre real Claude Code las cargaría como reglas, agente o skill de verdad, con los huecos sin rellenar. Para usarlas, cópialas con el nombre definitivo (`CLAUDE.md`, `.claude/agents/[nombre].md` o `.claude/skills/[nombre]/SKILL.md`).
