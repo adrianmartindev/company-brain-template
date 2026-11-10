@@ -1,0 +1,52 @@
+---
+name: [nombre-de-la-skill, en minúsculas con guiones]
+description: [Qué hace, en una o dos frases, con el resultado que entrega]. Usar cuando el usuario diga "/[nombre-de-la-skill]", "[frase típica 1]", "[frase típica 2]" o similar.
+argument-hint: "[qué se le puede pasar, p. ej. archivo, periodo o competidor]"
+---
+
+<!--
+PLANTILLA DE SKILL
+Para crear una skill: copia esta carpeta como .claude/skills/[nombre-de-la-skill]/, renombra este archivo a SKILL.md, rellena los [corchetes] y borra este comentario.
+La "description" es lo que Claude lee para decidir cuándo usarla: escríbela con las palabras que usaría la persona al pedirla.
+Si la skill necesita scripts, van en scripts/ dentro de su carpeta.
+-->
+
+# [Nombre de la skill]
+
+Objetivo: [qué tiene que quedar hecho al terminar, en una o dos frases].
+
+Rutas (relativas a la raíz del proyecto):
+- Entrada: [de dónde lee: carpeta, archivo o lo que pase el usuario]
+- Salida: [dónde deja el resultado: carpeta de departamento y nombre del archivo]
+- Temporales: el scratchpad de la sesión, nunca dentro del proyecto
+
+## Fuentes que lee siempre
+
+| Necesito | Dónde |
+|---|---|
+| [Dato] | `[NN-Departamento/archivo.md]` |
+
+## Proceso
+
+### 1. [Paso]
+
+[Qué se hace y cómo se sabe que está bien.]
+
+### 2. [Paso]
+
+[Ídem.]
+
+### 3. Verificar
+
+[Comprobación antes de dar por terminado: qué se revisa y qué umbral tiene que cumplir.]
+
+### 4. Resumen al usuario
+
+Termina con [tabla o lista: qué se ha hecho, dónde ha quedado y qué hay que revisar a mano].
+
+## Reglas
+
+- Cita el archivo del que sale cada dato. Si algo no está en el brain, dilo.
+- Sigue las convenciones de edición de `CLAUDE.md` (un dato, un archivo; nombres `NN-tema.md`; `[SUPUESTO]` y `[PENDIENTE]`).
+- Pide confirmación antes de cualquier acción que no se pueda deshacer (borrar, enviar, publicar).
+- [Regla propia de esta skill.]
